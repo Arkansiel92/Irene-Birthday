@@ -1,0 +1,19 @@
+body {
+    background-color: #F9F8F8;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a {
+    color: #8E7B7B;
+}
+
+.text-color {
+    color: #8E7B7B;
+}
+
+.primary-bg {
+    background-color: #F9F8F8;
+}
+
+.secondary-bg {
+    background-color: #E3DEDE;
+}
