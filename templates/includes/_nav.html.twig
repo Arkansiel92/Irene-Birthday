@@ -1,13 +1,17 @@
 <nav class="navbar navbar-expand-lg secondary-bg mb-5">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="{{ path('app_main') }}">HB</a>
+		<a class="navbar-brand" href="{{ path('app_main') }}">
+			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="text-color" viewbox="0 0 16 16">
+				<path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z"/>
+			</svg>
+		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="{{ path('app_main') }}">Accueil</a>
+					<a class="nav-link" href="{{ path('app_main') }}">Accueil</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ path('app_add_gift') }}">Ajouter un cadeau</a>

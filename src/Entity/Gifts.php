@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\GiftsRepository;
+use DateTimeImmutable;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -20,8 +23,17 @@ class Gifts
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column]
+    #[ORM\Column(options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeImmutable $created_at = null;
+
+    #[ORM\OneToMany(mappedBy: 'gift', targetEntity: Files::class, orphanRemoval: true)]
+    private Collection $files;
+
+    public function __construct()
+    {
+        $this->created_at = new DateTimeImmutable();
+        $this->files = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -60,6 +72,36 @@ class Gifts
     public function setCreatedAt(\DateTimeImmutable $created_at): static
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Files>
+     */
+    public function getFiles(): Collection
+    {
+        return $this->files;
+    }
+
+    public function addFile(Files $file): static
+    {
+        if (!$this->files->contains($file)) {
+            $this->files->add($file);
+            $file->setGift($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFile(Files $file): static
+    {
+        if ($this->files->removeElement($file)) {
+            // set the owning side to null (unless already changed)
+            if ($file->getGift() === $this) {
+                $file->setGift(null);
+            }
+        }
 
         return $this;
     }

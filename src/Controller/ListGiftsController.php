@@ -2,17 +2,18 @@
 
 namespace App\Controller;
 
+use App\Repository\GiftsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ListGiftsController extends AbstractController
 {
-    #[Route('/gifts', name: 'app_list_gifts')]
-    public function index(): Response
+    #[Route('/cadeaux', name: 'app_list_gifts')]
+    public function index(GiftsRepository $gifts): Response
     {
         return $this->render('list_gifts/index.html.twig', [
-            'controller_name' => 'ListGiftsController',
+            'gifts' => $gifts->findAll()
         ]);
     }
 }

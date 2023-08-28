@@ -17,3 +17,85 @@ h1, h2, h3, h4, h5, h6, p, span, a, label {
 .secondary-bg {
     background-color: #E3DEDE;
 }
+
+.alert-container {
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.alert-success {
+    background-color: rgb(1, 71, 55, 0.9);
+    color: #66dcbc;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    animation: FromTop 1s forwards, FromBottom 2s ease 2s 1 normal forwards;
+}
+
+.alert-warning {
+    position: absolute;
+}
+
+.alert-danger {
+    background-color: rgb(119, 29, 29, 0.9);
+    color: #f8b4a6;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    animation: FromTop 1s forwards, FromBottom 2s ease 2s 1 normal forwards;
+}
+
+@keyframes SlideRightToLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes SlideLeftToRight {
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+}
+
+@keyframes FromTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes FromBottom {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+}
