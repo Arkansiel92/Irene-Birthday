@@ -18,20 +18,26 @@ class GiftsFormType extends AbstractType
         $builder
             ->add('author', TextType::class, [
                 "attr" => [
-                    'class' => 'form-control mb-4'
+                    'class' => 'form-control mb-4',
+                    'placeholder' => 'Ton prénom'
                 ],
                 "label" => "Qui es-tu ?"
             ])
             ->add('description', TextareaType::class, [
                 "attr" => [
                     'rows' => 20,
-                    'class' => "form-control"
+                    'class' => "form-control",
+                    'placeholder' => 'Un petit poème par exemple ?'
                 ],
                 "label" => "Ecrit ce que tu veux lui dire !"
             ])
             ->add('files', FileType::class, [
+                'attr' => [
+                    'class' => 'form-control'
+                ],
                 'mapped' => false,
-                'required' => false
+                'required' => false,
+                'label' => 'Télécharger une photo'
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [

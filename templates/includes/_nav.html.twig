@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg secondary-bg mb-5">
+<nav class="navbar navbar-expand-lg secondary-bg mb-5 border-bottom">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="{{ path('app_main') }}">
 			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="text-color" viewbox="0 0 16 16">
@@ -18,7 +18,10 @@
 				</li>
 				{% if app.user %}
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('app_list_gifts') }}">Liste des cadeaux</a>
+						<a href="{{ path('app_list_gifts') }}" class="nav-link">Tes cadeaux</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('app_guestbook') }}">Livre d'or</a>
 					</li>
 				{% endif %}
 			</ul>

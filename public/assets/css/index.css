@@ -2,7 +2,7 @@ body {
     background-color: #F9F8F8;
 }
 
-h1, h2, h3, h4, h5, h6, p, span, a, label {
+h1, h2, h3, h4, h5, h6, p, span, a, label, small {
     color: #5E4955;
 }
 
