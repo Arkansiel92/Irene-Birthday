@@ -26,13 +26,15 @@ class Gifts
     #[ORM\Column(options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeImmutable $created_at = null;
 
-    #[ORM\OneToMany(mappedBy: 'gift', targetEntity: Files::class, orphanRemoval: true)]
-    private Collection $files;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $file = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $quality = null;
 
     public function __construct()
     {
         $this->created_at = new DateTimeImmutable();
-        $this->files = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -76,32 +78,26 @@ class Gifts
         return $this;
     }
 
-    /**
-     * @return Collection<int, Files>
-     */
-    public function getFiles(): Collection
+    public function getFile(): ?string
     {
-        return $this->files;
+        return $this->file;
     }
 
-    public function addFile(Files $file): static
+    public function setFile(?string $file): static
     {
-        if (!$this->files->contains($file)) {
-            $this->files->add($file);
-            $file->setGift($this);
-        }
+        $this->file = $file;
 
         return $this;
     }
 
-    public function removeFile(Files $file): static
+    public function getQuality(): ?string
     {
-        if ($this->files->removeElement($file)) {
-            // set the owning side to null (unless already changed)
-            if ($file->getGift() === $this) {
-                $file->setGift(null);
-            }
-        }
+        return $this->quality;
+    }
+
+    public function setQuality(string $quality): static
+    {
+        $this->quality = $quality;
 
         return $this;
     }

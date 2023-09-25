@@ -1,55 +1,86 @@
-body {
-    background-color: #F9F8F8;
+@font-face {
+	font-family: Roboto-Medium;
+	src: url("../fonts/Roboto-Medium.ttf");
 }
 
-h1, h2, h3, h4, h5, h6, p, span, a, label, small {
-    color: #5E4955;
+@font-face {
+    font-family: Pacifico;
+    src: url("../fonts/Pacifico.ttf");
+}
+
+body {
+	background-color: #F9F8F8;
+	font-family: Roboto-Medium;
+}
+
+.title-guestbook {
+	font-family: Pacifico;
+}
+
+.img-guestbook {
+	width: 200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+label,
+small {
+	color: #5E4955;
 }
 
 .text-color {
-    color: #5E4955;
+	color: #5E4955;
 }
 
 .primary-bg {
-    background-color: #F9F8F8;
+	background-color: #F9F8F8;
 }
 
 .secondary-bg {
-    background-color: #E3DEDE;
+	background-color: #E3DEDE;
 }
 
 .alert-container {
-    position: fixed;
-    top: 0%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 400px;
-    overflow: hidden;
-    z-index: 1;
+	position: fixed;
+	top: 0%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 400px;
+	overflow: hidden;
+	z-index: 1;
 }
 
 .alert-success {
-    background-color: rgb(1, 71, 55, 0.9);
-    color: #66dcbc;
-    font-weight: bolder;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 1;
-    animation: FromTop 1s forwards, FromBottom 2s ease 2s 1 normal forwards;
+	background-color: rgb(1, 71, 55, 0.9);
+	color: #66dcbc;
+	font-weight: bolder;
+	margin-top: 5px;
+	padding: 10px;
+	border-radius: 5px;
+	z-index: 1;
+	animation: FromTop 1s forwards, FromBottom 2s ease 2s 1 normal forwards;
 }
 
 .alert-warning {
-    position: absolute;
+	position: absolute;
 }
 
 .alert-danger {
-    background-color: rgb(119, 29, 29, 0.9);
-    color: #f8b4a6;
-    font-weight: bolder;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 1;
-    animation: FromTop 1s forwards, FromBottom 2s ease 2s 1 normal forwards;
+	background-color: rgb(119, 29, 29, 0.9);
+	color: #f8b4a6;
+	font-weight: bolder;
+	margin-top: 5px;
+	padding: 10px;
+	border-radius: 5px;
+	z-index: 1;
+	animation: FromTop 1s forwards, FromBottom 2s ease 2s 1 normal forwards;
 }
 
 @keyframes SlideRightToLeft {

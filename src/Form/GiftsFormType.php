@@ -23,6 +23,13 @@ class GiftsFormType extends AbstractType
                 ],
                 "label" => "Qui es-tu ?"
             ])
+            ->add('quality', TextType::class, [
+                'attr' => [
+                    'class' => "form-control mb-4",
+                    'placeholder' => 'Sa qualité'
+                ],
+                'label' => 'c\'est quoi sa meilleure qualité ?'
+            ])
             ->add('description', TextareaType::class, [
                 "attr" => [
                     'rows' => 20,
@@ -31,7 +38,7 @@ class GiftsFormType extends AbstractType
                 ],
                 "label" => "Ecrit ce que tu veux lui dire !"
             ])
-            ->add('files', FileType::class, [
+            ->add('file', FileType::class, [
                 'attr' => [
                     'class' => 'form-control'
                 ],

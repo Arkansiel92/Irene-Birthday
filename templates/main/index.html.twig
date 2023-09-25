@@ -1,20 +1,59 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}IB - Accueil{% endblock %}
+{% block title %}IB - Accueil
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/main/index.css') }}">
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/yaj92/Documents/Projets Programmation/Irene-Birthday/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/yaj92/Documents/Projets Programmation/Irene-Birthday/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <section class="secondary-bg">
+        <div class="row container-fluid py-5">
+            <div class="col">
+                <h1>Bienvenue au Livre d'Or de l'Anniversaire de Irène !</h1>
+                <p class="border-bottom">
+                    Aujourd'hui, nous nous réunissons pour célébrer un jour extraordinaire : l'anniversaire de Irène. 
+                    C'est une journée spéciale marquée par l'amour, le bonheur et les souvenirs précieux que nous partageons avec elle.
+                    C'est l'occasion idéale de lui montrer à quel point elle compte pour vous et combien elle est chère à votre cœur.
+                </p>
+                <h3>Jours restants : {{days}} jours !</h3>
+                <a class="btn btn-primary" href="{{ path('app_add_gift') }}">Laisser un commentaire !</a>
+            </div>
+            <div class="col">
+                <img id="img-main" class="img-fluid" src="{{ asset('uploads/irene.jpg') }}" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid">
+        <div class="row my-3">
+            <div class="col">
+                <div class="card text-center text-color">
+                    <div class="card-body">
+                        <h1><i class="bi bi-balloon-heart-fill"></i></h1>
+                        <h5 class="card-title">L'Amour que nous te donnons</h5>
+                        <p class="card-text">En cette journée spéciale, nous t'entourons de tout notre amour. Chaque message ici est une preuve de l'affection et de la tendresse que nous avons pour toi.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center text-color">
+                    <div class="card-body">
+                        <h1><i class="bi bi-cake2-fill"></i></h1>
+                        <h5 class="card-title">Célébrons ton Anniversaire</h5>
+                        <p class="card-text">C'est ton jour spécial, et nous sommes réunis pour célébrer chaque moment avec toi. Que cette journée soit remplie de bonheur, de sourires et de souvenirs inoubliables.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center text-color">
+                    <div class="card-body">
+                        <h1><i class="bi bi-book-half"></i></h1>
+                        <h5 class="card-title">Livre d'or</h5>
+                        <p class="card-text">Imagine la joie et l'émotion sur le visage de Irène lorsqu'elle lira chacun de vos messages. Partagez vos vœux et rendez cette journée encore plus spéciale pour elle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
