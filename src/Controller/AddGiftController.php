@@ -22,28 +22,27 @@ class AddGiftController extends AbstractController
         $giftsForm->handleRequest($request);
 
         if($giftsForm->isSubmitted() && $giftsForm->isValid()) {
-
-            $file = $giftsForm->get('file')->getData();
+            // $file = $giftsForm->get('file')->getData();
 
             
-            if($file) {
-                $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$file->guessExtension();
+            // if($file) {
+            //     $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            //     $safeFilename = $slugger->slug($originalFilename);
+            //     $newFilename = $safeFilename.'-'.uniqid().'.'.$file->guessExtension();
 
-                try {
-                    $file->move(
-                        $this->getParameter('files_directory'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                    $this->addFlash('error', 'Une erreur est survenue lors du téléchargement de la photo');
+            //     try {
+            //         $file->move(
+            //             $this->getParameter('files_directory'),
+            //             $newFilename
+            //         );
+            //     } catch (FileException $e) {
+            //         $this->addFlash('error', 'Une erreur est survenue lors du téléchargement de la photo');
 
-                    return $this->redirectToRoute('app_add_gift');
-                }
+            //         return $this->redirectToRoute('app_add_gift');
+            //     }
 
-                $gift->setFile($newFilename);
-            }
+            //     $gift->setFile($newFilename);
+            // }
 
             $em = $doctrine->getManager();
 
