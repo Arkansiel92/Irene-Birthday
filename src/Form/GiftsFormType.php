@@ -39,20 +39,20 @@ class GiftsFormType extends AbstractType
                 ],
                 "label" => "Ecrit ce que tu veux lui dire !"
             ])
-            ->add('file', FileType::class, [
-                'attr' => [
-                    'class' => 'form-control'
-                ],
-                'mapped' => false,
-                'required' => false,
-                'label' => 'Télécharger une photo',
-                'constraints' => [
-                    new File([
-                        'maxSize'=> "500M",
-                        'maxSizeMessage' => 'Le fichier est trop volumineux, le maximum autorisé est {{ limit }} {{ suffix }}'
-                    ])
-                ]
-            ])
+            // ->add('file', FileType::class, [
+            //     'attr' => [
+            //         'class' => 'form-control'
+            //     ],
+            //     'mapped' => false,
+            //     'required' => false,
+            //     'label' => 'Télécharger une photo',
+            //     'constraints' => [
+            //         new File([
+            //             'maxSize'=> "500M",
+            //             'maxSizeMessage' => 'Le fichier est trop volumineux, le maximum autorisé est {{ limit }} {{ suffix }}'
+            //         ])
+            //     ]
+            // ])
             ->add('submit', SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-primary my-3'
