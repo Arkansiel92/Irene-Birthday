@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class GiftsFormType extends AbstractType
 {
@@ -44,7 +45,13 @@ class GiftsFormType extends AbstractType
                 ],
                 'mapped' => false,
                 'required' => false,
-                'label' => 'Télécharger une photo'
+                'label' => 'Télécharger une photo',
+                'constraints' => [
+                    new File([
+                        'maxSize'=> "500M",
+                        'maxSizeMessage' => 'Le fichier est trop volumineux, le maximum autorisé est {{ limit }} {{ suffix }}'
+                    ])
+                ]
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [
